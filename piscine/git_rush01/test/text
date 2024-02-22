@@ -1,0 +1,50 @@
+!!!!!!! un dossier qui n4est pqs dans ex00 !!!!!!
+
+
+
+'v' pour les vue
+"n" pour les position
+
+  v v v v
+v n n n n v
+v n n n n v
+v n n n n v
+v n n n n v
+  v v v v 
+
+pointer 4 > pointer 3 > pointer 2 > pointer 1
+
+regle pour tout les pointer:
+- si les 3 pointer (exemple le pointer 4) son positionner mettre le 4 eme au croisement entre la ligne et la colonne.
+- si une ligne ou colonne a deja 3 pointer different mettre le pointer manquant.
+- interdire qu'un pointeur soit present plusieur fois dans une ligne ou colone.
+- si 2 pointer son poser (donc il reste 2 pointerde cette valeur a poser)  et qu'au different croisement des lignes est des colones un autre pointer est positioner et laisse une seul solution pour que les 2 pointeur soit positionner sans etre 2 fois sur la meme ligne ou meme colonne rempire les case en question avec c'est pointeur. 
+
+
+pour le pointer 4:
+ V - si une vue a '4' les pointer seron obligatoirememt de "1" "2" "3" "4" et donc la vue opposer a la vue '4' sera '1'
+V - si une vue a '1' alors le pointer 4 est obligatoirememt placer en position "1"
+- si une vue a '3' alors le pointer 4 est obligatoirement placer en position "3" sauf si ce pointer et deja positioner en "1".
+-si l'adition des vue font '5' alors la case qui se croise doit etre le pointer "4".
+
+
+pour le pointer 3:
+- si le pointer 4 est en position "1" et que la vue opposer demande un '2' la position "4" sera obligatoirement remplie parle pointer 3 (il sagit de la position la plus proche du 2).
+- si le pointer 4 est en position "1" et que la vue opposer demande un '3' la position "4" ne peu pasetre remplie par le pointer 3.
+- si le pointer 4 est en position "2" et que la vue opposer demande un '2' la position "3" ne peu pas etre remplie par le pointer 3.
+- si le pointer 4 et en position "3" et que la vue opposer demande un '3' la position "1" ne peu pas etre remplie par le pointer 3.
+- si le pointer 4 est en position "4" et le pointer 1 en position "3" alors le pointer 3 sera en position "2" et le pointer 2 sera en position "1".
+- si le pointer 4 est en position "3" et le pointer 2 en position "1" et que la vue demande '3' alors le pointer 3 est obligatoirement en position "2"et donc le pointer 1 en position "4".
+- si le pointer 4 est en position "3" et le pointer 2 en position "2" et que la vue demande '3' alors le pointer 1 est obligatoirement en position "1" et le pointer 3 en position "4".
+
+
+pour le pointer 2:
+- si le pointer 4 est en position "4" et le pointer 3 en positon "3" le pointer 2 doit obligatoirememt etre en pisition 1 si la vue demande en vue '3'.
+- si le pointer 3 est en position "1 et le pointer 4 est en position "2" et que la vue opposer demande '3' alors le pointer 2 est en position "3" et le pointer 1 est en position "4".
+- si le pointer 3 est en position "1" et le pointer 4 est position "2" et que la vue opposer demande '2' alors le pointer 2 est en position "1" et le pointer 1 est en position "2".
+
+
+pour le pointer de 1:
+- si le pointer 4 est en position "2" et que la vue opposer demande un '2' la position "4" ne peu pqs etre remplie par le pointeur 1.
+
+
